@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import MenuItem from './MenuItem';
+import './css/Menu.css';
 
 class Menu extends Component {
+
   render(){
+
     return(
-      <ul>
+      <ul className='main-menu'>
         {
-          this.props.item.map((item, index) => {
-            return <li key={index}>{item.name}</li>
+          this.props.itemsProps.map((item, index) => {
+            return <MenuItem key={ index } itemsProps={ item } />;
           })
         }
       </ul>

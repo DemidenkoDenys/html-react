@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import Tag from './Tag';
+import './css/main.css';
 
 class Main extends Component {
+
   render(){
+
     return(
-      <ul>
+      <div className='main-tag-list'>
         {
-          this.props.item.map((item, index) => {
-            return <li key={index}>{item.name}</li>
+          this.props.itemsProps.map((item, index) => {
+              return <Tag itemsProps={ item } key={ index } />
           })
         }
-      </ul>
+      </div>
     )
   }
 };

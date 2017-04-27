@@ -1,0 +1,10 @@
+{
+  "lineTag": "строчные",
+  "opened": "открытые",
+  "haveAttributes": "с атрибутами",
+  "outdatedInHtml5": "устарел в HTML5",
+  "appearInHtml5": "появился в HTML5",
+  "useInSeo": "используется для SEO",
+  "noRecommendToUse": "не рекомендуется",
+  "doNotUse": "не используется"
+}

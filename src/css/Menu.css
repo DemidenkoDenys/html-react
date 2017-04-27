@@ -1,0 +1,55 @@
+.main-menu{
+  position: absolute;
+  display: inline-block;
+  list-style: none;
+  vertical-align: top;
+  width: 200px;
+}
+
+.main-menu .menu-item span{
+  display: inline-block;
+  font-size: 0.8em;
+  color: grey;
+  opacity: 0.3;
+  transition: 1s;
+  margin-left: 10px;
+}
+
+.submenu{
+  display: block;
+  padding-left: 30px;
+  list-style: none;
+}
+
+.main-menu .menu-item:hover span,
+.main-menu .menu-item:hover:before {
+    opacity: 1;
+}
+
+.menu-item,
+.submenu-item{
+  position: relative;
+  text-transform: uppercase;
+}
+
+.menu-item a span{
+  text-transform: none;
+}
+
+.menu-item a{
+  display: inline-block;
+  width: 100%;
+}
+
+.menu-item:before,
+.submenu-item:before{
+  position: absolute;
+  display: inline-block;
+  left: -15px;
+  top: 3px;
+  margin-right: 5px;
+  font-size: 0.8em;
+  font-family: FontAwesome;
+  color: rgba(0, 0, 0, .3);
+  opacity: 0.5;
+}

@@ -1,0 +1,10 @@
+.main-tag-list{
+  list-style: none;
+  margin-left: 250px;
+  margin-right: 250px;
+  overflow: hidden;
+}
+
+.main-tag-list li :before{
+  margin-right: 5px;
+}
