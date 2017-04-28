@@ -5,6 +5,7 @@ import validateTag from './CheckFilters';
 class Tag extends Component {
 
   render(){
+
     const item = this.props.itemsProps;
     const tempComponent = (
       <div id={`tag${item.id}`}>

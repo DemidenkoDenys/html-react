@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Filter from './Filter';
 import CategoriesFilter from './CategoriesFilter';
 import Search from './Search';
+import ClearFilters from './ClearFilters';
 import './css/filters.css';
 import typesData from './data/types.json';
 import filtersData from './data/filters.json';
@@ -53,6 +54,10 @@ class Selectors extends Component {
         <div className='filter-list category'>
           <h3>Категории тегов</h3>
           { categories }
+        </div>
+
+        <div>
+          <ClearFilters />
         </div>
 
       </aside>)

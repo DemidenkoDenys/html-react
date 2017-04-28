@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 
 class Filter extends Component {
 
-  constructor(props){
-    super(props);
-
-  }
-
   toggle(){   // состояние для применения фильтра
 
     // отключение блочных
@@ -30,13 +25,17 @@ class Filter extends Component {
     switch(this.props.filterSign){
       case 'lineTag': id = 'lineTag'; break;
       case 'blockTag': id = 'blockTag'; break;
+      default: ;
     }
+
+
 
     return (
       <label>
         <input
+          checked={ this.props.filters[this.props.filterSign] }
           type='checkbox'
-          id= {id}
+          id={id}
           value={ this.props.filterSign }
           ref={(checkbox) => { this.filterCheckbox = checkbox }}
           onChange={ this.toggle.bind(this) }
@@ -48,6 +47,6 @@ class Filter extends Component {
 };
 
 export default connect(
-  null,
+  store => ({ filters: store.filters }),
   dispatch => ({ onChangeFilter: (sign, state) => dispatch({ type: 'FILTER', sign: sign, state: state }) }),
 )(Filter);

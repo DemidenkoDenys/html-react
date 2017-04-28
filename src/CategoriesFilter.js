@@ -17,6 +17,7 @@ class categoriesFilter extends Component {
     return (
       <label>
         <input
+          checked={ this.props.categories[this.props.filterSign] }
           type='checkbox'
           value={ this.props.filterSign }
           ref={(checkbox) => { this.filterCheckbox = checkbox }}
@@ -29,6 +30,6 @@ class categoriesFilter extends Component {
 };
 
 export default connect(
-  null,
+    store => ({ categories: store.categories }),
   dispatch => ({ onChangeCategory: (sign, state) => dispatch({ type: 'CATEGORIES_FILTER', sign: sign, state: state }) }),
 )(categoriesFilter);
