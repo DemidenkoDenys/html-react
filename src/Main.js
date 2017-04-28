@@ -10,6 +10,7 @@ class Main extends Component {
       <div className='main-tag-list'>
         {
           this.props.itemsProps.map((item, index) => {
+
               return <Tag itemsProps={ item } key={ index } />
           })
         }

@@ -1,5 +1,6 @@
 {
   "lineTag": "строчные",
+  "blockTag": "блочные",  
   "opened": "открытые",
   "haveAttributes": "с атрибутами",
   "outdatedInHtml5": "устарел в HTML5",

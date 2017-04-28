@@ -1,5 +1,6 @@
 const initFilters = {
   lineTag: false,
+  blockTag: false,
   haveAttributes: false,
   outdatedInHtml5: false,
   appearInHtml5: false,
@@ -12,15 +13,10 @@ const initFilters = {
 export default function filters(state = initFilters, action)
 {
   if(action.type === 'FILTER'){
-    var tempState = state;
+    var tempState = {};
+    for(var key in state)
+      tempState[key] = state[key];
     tempState[action.sign] = action.state;
-
-    // скопировать исходное состояние без изменения оригинального
-
-    console.log('tempState ', tempState);
-    console.log('state', state);
-
-
     return tempState;
   }
   return state;

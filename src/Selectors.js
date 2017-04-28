@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Filter from './Filter';
+import CategoriesFilter from './CategoriesFilter';
 import Search from './Search';
 import './css/filters.css';
 import typesData from './data/types.json';
@@ -30,7 +31,7 @@ class Selectors extends Component {
     for(let i in typesData){
 
       if (typesData.hasOwnProperty(i)){
-        categories.push(<Filter key={i} filterName={ typesData[i] } />);
+        categories.push(<CategoriesFilter key={ typesData[i].id } filterName={ typesData[i].name } filterSign={ i } />);
       }
     }
 
@@ -40,15 +41,18 @@ class Selectors extends Component {
              className={`filters ${this.state.active ? 'active' : ''}`}>
 
         <div className='filter-list search'>
+          <h3>Поиск</h3>
           <Search />
         </div>
 
         <div className='filter-list'>
+          <h3>Отобрать теги</h3>
           { filters }
         </div>
 
         <div className='filter-list category'>
-          { categories.slice(1, categories.length - 2) }
+          <h3>Категории тегов</h3>
+          { categories }
         </div>
 
       </aside>)

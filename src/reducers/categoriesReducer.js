@@ -1,17 +1,25 @@
-export default function filters(state =
-  {
-    media: 0,
-    layout: 0,
-    picture: 0,
-    object: 0,
-    script: 0,
-    list: 0,
-    link: 0,
-    tables: 0,
-    text: 0,
-    form: 0,
-    frame: 0
-  }, action)
+const initCategories = {
+    media: false,
+    layout: false,
+    picture: false,
+    object: false,
+    script: false,
+    list: false,
+    link: false,
+    tables: false,
+    text: false,
+    form: false,
+    frame: false
+  }
+
+export default function categories(state = initCategories, action)
 {
+  if(action.type === 'CATEGORIES_FILTER'){
+    var tempState = {};
+    for(var key in state)
+      tempState[key] = state[key];
+    tempState[action.sign] = action.state;
+    return tempState;
+  }
   return state;
 }

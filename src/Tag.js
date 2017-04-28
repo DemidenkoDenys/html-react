@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import validateTag from './CheckFilters';
 
 class Tag extends Component {
 
   render(){
-
-    if(!this.props.itemsProps.name.includes(this.props.filterText))
-      return false;
-
     const item = this.props.itemsProps;
-
-    return(
+    const tempComponent = (
       <div id={`tag${item.id}`}>
         { item.id !== 1 ? <hr /> : null }
         <h2 className='tag-name'>{`<${ item.name }>`}</h2>
         <h3 className='tag-short-description'>{ item.shdes }</h3>
         <div className='tag-description' dangerouslySetInnerHTML={{__html: item.des}}></div>
-      </div>
-    )
+      </div>);
+
+    // фильтры отображения
+    return validateTag(item, this.props.filters, this.props.filterText, this.props.categories, tempComponent);
   }
 };
 
 export default connect(
-  store => ({ filterText: store.search })
+  store => ({ filterText: store.search, filters: store.filters, categories: store.categories })
 )(Tag);
