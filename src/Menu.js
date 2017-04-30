@@ -6,14 +6,18 @@ class Menu extends Component {
 
   render(){
 
+    // const heightWindow = window.clientHeight;
+
     return(
-      <ul className='main-menu'>
+      <aside id="menu">
+        <ul className='main-menu'>
         {
           this.props.itemsProps.map((item, index) => {
             return <MenuItem key={ index } itemsProps={ item } />;
           })
         }
-      </ul>
+        </ul>
+      </aside>
     )
   }
 };

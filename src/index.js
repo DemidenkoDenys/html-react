@@ -7,6 +7,8 @@ import reducer from './reducers/indexReducer'   // редьюсеры
 import './css/font-awesome.css';                // стили
 import './css/index.css';
 
+import './Scrolling.js';
+
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(

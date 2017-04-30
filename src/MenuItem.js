@@ -16,6 +16,10 @@ class MenuItem extends Component {
     this.setState({ activeSubmenu: !this.state.activeSubmenu });
   }
 
+  handleFocus(){
+    console.log('Menu item', this.props.itemsProps.id, 'focused');
+  }
+
   render(){
 
     const item = this.props.itemsProps;
@@ -29,12 +33,16 @@ class MenuItem extends Component {
     const countOfAttr = (item.attrs && item.attrs.length > 0) ? <span>{item.attrs.length} атрибутов</span> : null;
 
     const tempComponent = (
-      <li className={`menu-item ${specsData[item.spec]}`}>
-        <a href="#" onClick={ this.toggleSubmenu.bind(this) } >
-          { item.name }
-          { countOfAttr }
-        </a>
-        { sub }
+      <li
+        className={`menu-item ${specsData[item.spec]}`}
+        id={`menu-tag${item.id}`}
+        onFocus={ this.handleFocus.bind(this) }
+        tabIndex={`${item.id - 2}`}>
+          <a href="#" onClick={ this.toggleSubmenu.bind(this) } >
+            { '<' + item.name + '>' }
+            { countOfAttr }
+          </a>
+          { sub }
       </li>
     );
 

@@ -56,7 +56,7 @@ class Selectors extends Component {
           { categories }
         </div>
 
-        <div>
+        <div className='clear_button_wrapper'>
           <ClearFilters />
         </div>
 

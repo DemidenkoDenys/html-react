@@ -2,10 +2,11 @@
   position: fixed;
   right: 0;
   top: 0;
-  background-color: lightgrey;
+  background: rgba(201, 211, 211, .2);
   width: 20px;
   height: 100%;
   transition: 1s;
+  padding: 0 20px;
 }
 
 .filters.active{
@@ -23,4 +24,10 @@
 .filter-list{
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.filters .clear_button_wrapper {
+  width: 100%;
+  padding-top: 15px;
+  text-align: center;
 }

@@ -5,7 +5,7 @@ class Search extends Component {
 
   constructor(props){
     super(props)
-    this.state = { searchText: '' }
+    this.state = { searchText: '', init: true }
   }
 
   searchTag(e){
@@ -13,7 +13,7 @@ class Search extends Component {
     this.props.onSearchTag(this.searchInput.value);
   }
 
-  console(e){
+  setValue(e){
     this.setState({ searchText: e.target.value });
   }
 
@@ -25,13 +25,13 @@ class Search extends Component {
         placeholder='введите текст'
         value={ this.state.searchText }
         ref={(input) => { this.searchInput = input }}
-        onChange={ this.console.bind(this) } />
+        onChange={ this.setValue.bind(this) } />
       </form>
     )
   }
 };
 
 export default connect(
-  store => ({ filterSearch: store.search, store: store}),
+  store => ({ filterSearch: store.search }),
   dispatch => ({ onSearchTag: (search) => dispatch({ type: 'SEARCH', search: search }) }),
 )(Search);

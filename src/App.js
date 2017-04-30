@@ -30,14 +30,6 @@ class App extends Component {
     });
   }
 
-  // получаем все атрибуты
-  getAttributes(data){
-    // фильтруем все атрибуты из всех данных
-    return data.filter((item) => {
-      return item.attr !== 0;
-    });
-  }
-
   render(){
 
     const mainData = this.getTags(tagsData);

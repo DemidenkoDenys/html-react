@@ -1,7 +1,14 @@
+/**:focus{
+  outline: none;
+}*/
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url(../img/background17.png) repeat;
+  background-attachment: fixed;
 }
 
 a{
@@ -21,9 +28,14 @@ a{
 
 .html5:before{ color: #32CD32; content: '\f13b'; }
 .norec:before{ color: rgba(255, 0, 0, .5); content: '\f088'; }
-.rec:before{ color: #32CD32; content: '\f087rec'; }
+.rec:before{ color: #32CD32; content: '\f087'; }
 .excl:before{ color: #32CD32; content: '\f12a'; }
 .out5:before{ color: rgba(255, 0, 0, .5); content: '\f13b'; }
 .out:before{ color: grey; content: '\f1f8'; }
 .seo:before{ color: #1E90FF; content: '\f201'; }
 .def:before{ color: #32CD32; content: '\f046'; }
+
+canvas{
+  position: absolute;
+  border: 1px solid red;
+}

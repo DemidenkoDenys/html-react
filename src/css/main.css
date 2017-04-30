@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.main-tag-list>div{
+  overflow: hidden; /* important, do not delete !!! */
+}
+
 .main-tag-list li :before{
   margin-right: 5px;
 }
