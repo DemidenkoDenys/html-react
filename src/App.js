@@ -7,7 +7,7 @@ import tagsData from './data/data.json';
 class App extends Component {
 
   // получаем все теги
-  getTags(data){
+  parseTagsJSON(data){
     // для временного хранения тегов
     var tempData = {};
     // перебор массива всех данных
@@ -32,9 +32,10 @@ class App extends Component {
 
   render(){
 
-    const mainData = this.getTags(tagsData);
+    const mainData = this.parseTagsJSON(tagsData);
+
     return(
-      <main>
+      <main id='main'>
         <Menu itemsProps={ mainData }/>
         <Main itemsProps={ mainData }/>
         <Selectors />

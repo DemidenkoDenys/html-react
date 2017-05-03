@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import SubmenuItem from './SubmenuItem';
-import validateTag from './CheckFilters';
+
 import specsData from './data/specs.json';
+
+import { scrollToTag } from './WindowScrolling';
 
 class MenuItem extends Component {
 
@@ -17,7 +18,11 @@ class MenuItem extends Component {
   }
 
   handleFocus(){
-    console.log('Menu item', this.props.itemsProps.id, 'focused');
+  }
+
+  handleClick(){
+    scrollToTag(document.getElementById(`tag${this.props.itemsProps.id}`));
+    this.refs.menuItem.focus();
   }
 
   render(){
@@ -32,24 +37,22 @@ class MenuItem extends Component {
     // шаблон отображения количества атрибутов в пункте меню
     const countOfAttr = (item.attrs && item.attrs.length > 0) ? <span>{item.attrs.length} атрибутов</span> : null;
 
-    const tempComponent = (
+    return (
       <li
         className={`menu-item ${specsData[item.spec]}`}
         id={`menu-tag${item.id}`}
+        ref='menuItem'
         onFocus={ this.handleFocus.bind(this) }
+        onClick={ this.handleClick.bind(this) }
         tabIndex={`${item.id - 2}`}>
           <a href="#" onClick={ this.toggleSubmenu.bind(this) } >
-            { '<' + item.name + '>' }
+            <strong>{ '<' + item.name + '>' }</strong>
             { countOfAttr }
           </a>
           { sub }
       </li>
     );
-
-    return validateTag(item, this.props.filters, this.props.filterText, this.props.categories, tempComponent);
   }
 };
 
-export default connect(
-  store => ({ filterText: store.search, filters: store.filters, categories: store.categories })
-)(MenuItem);
+export default MenuItem;

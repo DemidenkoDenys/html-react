@@ -5,10 +5,85 @@
   overflow: hidden;
 }
 
+.main-tag-list *{
+  cursor: default;
+}
+
 .main-tag-list>div{
   overflow: hidden; /* important, do not delete !!! */
 }
 
-.main-tag-list li :before{
-  margin-right: 5px;
+.main-tag-list>div h2{
+  font-weight: normal;
+  color: blue;
+}
+
+.main-tag-list>div hr:first-child{
+  height: 2px;
+  background-color: lightblue;
+  border: none;
+}
+
+.main-tag-list>div p.description{
+  color: #CC6600;
+  margin: 0 30px;
+}
+
+.main-tag-list>div h2 span{
+  color: green;
+  text-transform: lowercase;
+}
+
+.main-tag-list em{
+  color: grey;
+  display: inline-block;
+  margin: 0 30px 10px;
+}
+
+.main-tag-list em:before{
+  margin-right: 10px;
+}
+
+.main-tag-list em:hover{
+  color: black;
+}
+
+.attribute-wrapper{
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 10px 20px;
+}
+
+.attribute-wrapper em{
+  margin: 0 0 10px 0;
+}
+
+.attribute-wrapper span.description{
+  color: #CC6600;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.attribute-title span.title-name{
+  color: blue;
+}
+
+.attribute-title span.title-description{
+  color: green;
+  text-transform: lowercase;
+}
+
+.attribute-description i{
+  color: #CC6600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+attr{
+	color: rgb(40, 200, 90) !important;
+}
+
+tag{
+	color: #CC6600 !important;
 }

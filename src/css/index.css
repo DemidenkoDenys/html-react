@@ -1,7 +1,6 @@
-/**:focus{
+*:focus{
   outline: none;
-}*/
-
+}
 
 body {
   margin: 0;
@@ -13,6 +12,10 @@ body {
 
 a{
   text-decoration: none;
+}
+
+.hidden{
+  display: none !important;
 }
 
 .html5,
@@ -34,8 +37,3 @@ a{
 .out:before{ color: grey; content: '\f1f8'; }
 .seo:before{ color: #1E90FF; content: '\f201'; }
 .def:before{ color: #32CD32; content: '\f046'; }
-
-canvas{
-  position: absolute;
-  border: 1px solid red;
-}
