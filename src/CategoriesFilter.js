@@ -14,17 +14,17 @@ class categoriesFilter extends Component {
 
   render(){
 
-    return (
-      <label>
+    return (<div className='filter-wrapper'>
         <input
           checked={ this.props.categories[this.props.filterSign] }
           type='checkbox'
+          id={ this.props.filterSign }
           value={ this.props.filterSign }
           ref={(checkbox) => { this.filterCheckbox = checkbox }}
           onChange={ this.toggle.bind(this) }
           />
-        { this.props.filterName }
-      </label>
+        <label htmlFor={ this.props.filterSign }>{ this.props.filterName }</label>
+      </div>
     )
   }
 };

@@ -23,10 +23,9 @@ class App extends Component {
           tempData['tag' + data[i].attr].attrs.push(data[i]);
         }
     }
+
     return data.filter((item) => {
-       return (    item.attr === 0
-                // && item.name.includes(this.props.filterText)     // фильтр поиска
-              );
+       return item.attr === 0;
     });
   }
 

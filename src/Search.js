@@ -20,12 +20,15 @@ class Search extends Component {
   render(){
 
     return (<form onSubmit={ this.searchTag.bind(this) }>
-      <input
-        type='text'
-        placeholder='введите текст'
-        value={ this.state.searchText }
-        ref={(input) => { this.searchInput = input }}
-        onChange={ this.setValue.bind(this) } />
+        <div className='search-field'>
+          <input
+            type='text'
+            placeholder='введите текст'
+            value={ this.state.searchText }
+            ref={(input) => { this.searchInput = input }}
+            onChange={ this.setValue.bind(this) } />
+          <button className='submit-search'><i></i></button>
+        </div>
       </form>
     )
   }

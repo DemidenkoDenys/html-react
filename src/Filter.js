@@ -21,27 +21,18 @@ class Filter extends Component {
 
   render(){
 
-    let id = null;
-    switch(this.props.filterSign){
-      case 'lineTag': id = 'lineTag'; break;
-      case 'blockTag': id = 'blockTag'; break;
-      default: ;
-    }
-
-
-
     return (
-      <label>
+      <div className='filter-wrapper'>
         <input
           checked={ this.props.filters[this.props.filterSign] }
           type='checkbox'
-          id={id}
+          id={ this.props.filterSign }
           value={ this.props.filterSign }
           ref={(checkbox) => { this.filterCheckbox = checkbox }}
           onChange={ this.toggle.bind(this) }
           />
-        { this.props.filterName }
-      </label>
+        <label htmlFor={ this.props.filterSign } className='filter-label'>{ this.props.filterName }</label>
+      </div>
     )
   }
 };

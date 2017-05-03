@@ -44,6 +44,7 @@ class ClearFilters extends Component {
 
     return (
       <button
+        id='clear-button'
         disabled={ disabled }
         onClick={ this.clearAllFilters.bind(this) }>
         Очистить фильтры

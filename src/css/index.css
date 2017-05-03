@@ -2,6 +2,10 @@
   outline: none;
 }
 
+*.lowercase{
+  text-transform: lowercase;
+}
+
 body {
   margin: 0;
   padding: 0;

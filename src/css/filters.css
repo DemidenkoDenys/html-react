@@ -7,6 +7,19 @@
   height: 100%;
   transition: 1s;
   padding: 0 20px;
+  overflow: auto;
+  font-family: Arial;
+}
+
+
+.filters *{
+  transition: 1.5s;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.filters h3{
+  color: darkblue;
 }
 
 .filters.active{
@@ -14,11 +27,37 @@
 }
 
 .filters label{
+  transition: 0.5s;
   display: block;
+  cursor: pointer;
+  text-transform: lowercase;
+  position: relative;
+  left: 20px;
+  color: lightblue;
 }
 
-.filters label{
-  cursor: pointer;
+.filters label:hover{
+  color: darkblue;
+}
+
+.filters label:before{
+  font-family: fontAwesome;
+  display: inline-block;
+  position: absolute;
+  left: -20px;
+  top: 2px;
+  margin-right: 10px;
+  content: '\f096';
+  color: lightblue;
+}
+
+.filters input:checked + label{
+  color: darkblue;
+}
+
+.filters input:checked + label:before{
+  content: '\f046';
+  color: darkblue;
 }
 
 .filter-list{
@@ -30,4 +69,100 @@
   width: 100%;
   padding-top: 15px;
   text-align: center;
+}
+
+.search{
+  padding-right: 35px;
+}
+
+.search .search-field{
+  width: 100%;
+  padding-right: 35px;
+  position: relative;
+}
+
+.search .search-field input:focus{
+  border: 2px solid darkblue;
+}
+
+.search .search-field input:focus + button{
+  border: 2px solid darkblue;
+}
+
+.search .search-field input:focus + button i:before{
+  color: darkblue;
+}
+
+.search .search-field input{
+  position: relative;
+  border: 2px solid lightblue;
+  box-sizing: border-box;
+  border-radius: 10px 0 0 10px;
+  padding: 5px 10px;
+  width: 100%;
+  z-index: 2;
+}
+
+
+
+.search .search-field input::-webkit-input-placeholder{ font-size: 14px; color: lightblue; }
+.search .search-field input::-moz-placeholder{ font-size: 14px; color: lightblue; }
+.search .search-field input:-ms-input-placeholder{ font-size: 14px; color: lightblue; }
+.search .search-field input:-moz-placeholder{ font-size: 14px; color: lightblue; }
+
+.search .search-field input:focus::-webkit-input-placeholder{ color: white; }
+.search .search-field input:focus::-moz-placeholder{ color: white; }
+.search .search-field input:focus:-ms-input-placeholder{ color: white; }
+.search .search-field input:focus:-moz-placeholder{ color: white; }
+
+.search .search-field .submit-search{
+  width: 35px;
+  height: 29px;
+  border-right: 2px solid lightblue;
+  border-top: 2px solid lightblue;
+  border-bottom: 2px solid lightblue;
+  border-radius: 0 10px 10px 0;
+  position: absolute;
+  right: 2px;
+  background: white;
+  z-index: 1;
+  cursor: pointer;
+  text-align: center;
+}
+
+.search .search-field .submit-search i:before{
+  content: '\f002';
+  font-style: normal;
+  color: lightblue;
+  font-family: FontAwesome;
+  font-size: 20px;
+}
+
+input[type='checkbox']{
+  display: none;
+}
+
+#clear-button{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 2px solid lightblue;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: lightblue;
+  font-size: 16px;
+  background: white;
+  cursor: pointer;
+  font-family: Arial;
+  opacity: 1;
+}
+
+#clear-button:disabled{
+  opacity: 0;
+}
+
+#clear-button:hover{
+  background: rgba(0, 0, 255, 0.1);
+  color: darkblue;
+  border: 2px solid darkblue;
 }

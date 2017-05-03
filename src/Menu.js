@@ -19,7 +19,7 @@ class Menu extends Component {
       strokeDasharray: '3'
     };
 
-    var fullHeightStyles = {
+    const fullHeightStyles = {
       height: document.documentElement.clientHeight
     };
 

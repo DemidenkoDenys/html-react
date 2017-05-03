@@ -45,8 +45,8 @@ class MenuItem extends Component {
         onFocus={ this.handleFocus.bind(this) }
         onClick={ this.handleClick.bind(this) }
         tabIndex={`${item.id - 2}`}>
-          <a href="#" onClick={ this.toggleSubmenu.bind(this) } >
-            <strong>{ '<' + item.name + '>' }</strong>
+          <a href="#" onClick={ this.toggleSubmenu.bind(this) }>
+            <strong className={ item.name.length > 12 ? 'lowercase' : '' }>{ '<' + item.name + '>' }</strong>
             { countOfAttr }
           </a>
           { sub }

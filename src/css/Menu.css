@@ -1,15 +1,12 @@
 #menu{
-  position: absolute;
   display: inline-block;
   list-style: none;
   vertical-align: top;
   width: 240px;
   margin: 0;
-  padding: 20px 0 0 0;
   background: rgba(201, 211, 211, .2);
   position: fixed;
   overflow: hidden;
-  height: 600px;
 }
 
 .mainMenu{

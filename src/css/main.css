@@ -74,10 +74,19 @@
   text-transform: lowercase;
 }
 
+.main-tag-list>div i,
 .attribute-description i{
   color: #CC6600;
   display: inline-block;
-  margin-top: 10px;
+}
+
+.attribute-description i{
+    margin-top: 10px;
+}
+
+.main-tag-list>div i:before,
+.attribute-description i:before{
+  content: ' ';
 }
 
 attr{
@@ -86,4 +95,19 @@ attr{
 
 tag{
 	color: #CC6600 !important;
+}
+
+.«open»,
+.open{
+  color: #3399FF !important;
+}
+
+.«open»:before,
+.open:before{
+  content: '<';
+}
+
+.«open»:after,
+.open:after{
+  content: '>';
 }
