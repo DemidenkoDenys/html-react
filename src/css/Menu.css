@@ -17,6 +17,12 @@
   overflow: hidden;
 }
 
+.menu-item,
+.submenu-item{
+  position: relative;
+  text-transform: uppercase;
+}
+
 .menu-item a:hover{
   background: rgba(201, 211, 211, .3);
   color: darkblue;
@@ -45,18 +51,49 @@
   text-transform: none;
 }
 
-.menu-item:before,
-.submenu-item:before{
+.menu-item > i:before,
+.submenu-item > i:before{
   position: absolute;
-  display: inline-block;
+  z-index: 1;
   left: 10px;
   top: 6px;
   margin-right: 5px;
   font-size: 0.8em;
   font-family: FontAwesome;
-  color: rgba(0, 0, 0, .3);
   opacity: 0.5;
+  font-style: normal;
 }
+
+.menu-item > i:after,
+.submenu-item > i:after{
+  display: none;
+  font-style: normal;
+  text-transform: lowercase;
+  font-family: arial;
+  font-size: 16px;
+}
+
+.menu-item > i:hover:after,
+.submenu-item > i:hover:after{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 25px;
+  color: grey;
+  background: lightblue;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.html5:after{ content: 'Появился в HTML5'; }
+.norec:after{ content: 'Не рекомендуется использовать'; }
+  .rec:after{ content: ''; }
+ .excl:after{ content: ''; }
+ .out5:after{ content: 'В HTML5 не используется'; }
+  .out:after{ content: 'Устарел'; }
+  .seo:after{ content: 'Активно используется в SEO'; }
+  .def:after{ content: 'Атрибут по-умолчанию'; }
 
 .mainMenu .menu-item span{
   display: inline-block;
@@ -73,14 +110,8 @@
 }
 
 .mainMenu .menu-item:hover span,
-.mainMenu .menu-item:hover:before {
+.menu-item:hover>i {
     opacity: 1;
-}
-
-.menu-item,
-.submenu-item{
-  position: relative;
-  text-transform: uppercase;
 }
 
 #svgMenuTag{

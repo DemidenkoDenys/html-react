@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SubmenuItem from './SubmenuItem';
-
 import specsData from './data/specs.json';
-
 import { scrollToTag } from './WindowScrolling';
 
 class MenuItem extends Component {
@@ -20,7 +18,7 @@ class MenuItem extends Component {
   handleFocus(){
   }
 
-  handleClick(){
+  handleClick(e){
     scrollToTag(document.getElementById(`tag${this.props.itemsProps.id}`));
     this.refs.menuItem.focus();
   }
@@ -39,12 +37,13 @@ class MenuItem extends Component {
 
     return (
       <li
-        className={`menu-item ${specsData[item.spec]}`}
+        className='menu-item'
         id={`menu-tag${item.id}`}
         ref='menuItem'
         onFocus={ this.handleFocus.bind(this) }
         onClick={ this.handleClick.bind(this) }
         tabIndex={`${item.id - 2}`}>
+          <i className={`${specsData[item.spec]}`}></i>
           <a href="#" onClick={ this.toggleSubmenu.bind(this) }>
             <strong className={ item.name.length > 12 ? 'lowercase' : '' }>{ '<' + item.name + '>' }</strong>
             { countOfAttr }
