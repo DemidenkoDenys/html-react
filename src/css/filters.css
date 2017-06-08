@@ -15,7 +15,6 @@
 .filters *{
   transition: 1.5s;
   -moz-user-select: none;
-  -webkit-user-select: none;
 }
 
 .filters h3{
@@ -95,15 +94,16 @@
 
 .search .search-field input{
   position: relative;
+  height: 30px;
   border: 2px solid lightblue;
   box-sizing: border-box;
   border-radius: 10px 0 0 10px;
-  padding: 5px 10px;
+  font-size: 100%;
+  margin: 0;
+  padding: 3px 10px;
   width: 100%;
   z-index: 2;
 }
-
-
 
 .search .search-field input::-webkit-input-placeholder{ font-size: 14px; color: lightblue; }
 .search .search-field input::-moz-placeholder{ font-size: 14px; color: lightblue; }
@@ -117,7 +117,7 @@
 
 .search .search-field .submit-search{
   width: 35px;
-  height: 29px;
+  height: 30px;
   border-right: 2px solid lightblue;
   border-top: 2px solid lightblue;
   border-bottom: 2px solid lightblue;

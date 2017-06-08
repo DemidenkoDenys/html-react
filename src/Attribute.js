@@ -12,7 +12,7 @@ class Attribute extends Component {
     if(textNodes.length > 0 && textNodes[0].nodeType === 3){
       var descriptionTag = document.createElement('SPAN');
       descriptionTag.classList.add('description');
-      descriptionTag.dataset.parentid = `tag${this.props.item.id}`;
+      descriptionTag.setAttribute('data-parentid', `tag${this.props.item.id}`);
       descriptionTag.textContent = textNodes[0].textContent;
       desc.removeChild(textNodes[0]);
       desc.insertBefore(descriptionTag, desc.firstChild);

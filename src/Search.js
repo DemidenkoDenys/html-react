@@ -9,6 +9,7 @@ class Search extends Component {
   }
 
   searchTag(e){
+    // console.log(e.preventDefault);
     e.preventDefault();
     this.props.onSearchTag(this.searchInput.value);
   }
@@ -27,7 +28,7 @@ class Search extends Component {
             value={ this.state.searchText }
             ref={(input) => { this.searchInput = input }}
             onChange={ this.setValue.bind(this) } />
-          <button className='submit-search'><i></i></button>
+          <button type='submit' className='submit-search'><i></i></button>
         </div>
       </form>
     )

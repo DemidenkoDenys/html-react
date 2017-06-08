@@ -40,7 +40,7 @@
   text-decoration: none;
   outline: none;
   color: blue;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", "Helvetica";
 }
 
 .menu-item a strong{
@@ -116,6 +116,7 @@
 
 #svgMenuTag{
   position: fixed;
+  width: 240px;
   top: 0px;
   left: 0px;
 }

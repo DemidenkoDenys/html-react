@@ -13,9 +13,9 @@ class Tag extends Component {
 
   recursionSetDataAttr(elem){
     const id = this.props.itemsProps.id;
-    elem.dataset.parentid = `tag${id}`;
+    elem.setAttribute('data-parentid', `tag${id}`);
     for(let i = 0, l = elem.children.length; i < l; i++){
-      elem.children[i].dataset.parentid = `tag${id}`;
+      elem.children[i].setAttribute('data-parentid', `tag${id}`);
       if(elem.children[i].children.length > 0)
         this.recursionSetDataAttr(elem.children[i]);
     }
@@ -27,7 +27,7 @@ class Tag extends Component {
     if(textNodes.length > 0 && textNodes[0].nodeType === 3){
       var descriptionTag = document.createElement('P');
       descriptionTag.classList.add('description');
-      descriptionTag.dataset.parentid = `tag${this.props.itemsProps.id}`;
+      descriptionTag.setAttribute('data-parentid', `tag${this.props.itemsProps.id}`);
       descriptionTag.textContent = textNodes[0].textContent;
       desc.removeChild(textNodes[0]);
       desc.insertBefore(descriptionTag, desc.firstChild);

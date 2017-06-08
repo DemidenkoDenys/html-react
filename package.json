@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "express": "^4.15.2",
+    "jquery": "^3.2.1",
     "mysql": "^2.13.0",
     "node-mysql": "^0.4.2",
     "react": "^15.5.4",

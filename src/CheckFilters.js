@@ -1,6 +1,5 @@
 export default function validateTag(item, filters, filterText, categories, component){
-
-  if(!item.name.includes(filterText)
+  if(item.name.indexOf(filterText) === -1
     || (filters.lineTag          && !item.str)
     || (filters.blockTag         && item.str)
     || (filters.haveAttributes   && !Boolean(item.attrs.length))
